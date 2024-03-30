@@ -18,7 +18,7 @@
 - Raportoinnissa kirjataan ylös mitä tehdään ja mikä tärkeintä, mihin tekemiset johtavat
 - Erityisesti ongelmatilanteita kohdatessa hyvä raportointi auttaa hahmottamaan tilannetta ja helpottaa ongelmanratkaisua myös tulevaisuudessa
 - Toistettavuus: Samalla ohjeella toteutetut työt tulisivat tuottaa saman lopputuloksen. Muista raportoida myös käyttämääsi toimintaympäristöä
-- Täsmällisyys: Raportoi täsmällisesti mitä olet tehnyt. Testaa lopputulos sekä kirjaa se raporttiin. Jos tulos ei ole toivottu, analysoi mistä ongelma voisi johtua. Jos vaikuttaa siltä, että ongelma ei ole sinun päässäsi, ilmoita siitä tarvittaessa eteenpäin sille kuuluville tahoille.
+- Täsmällisyys: Raportoi täsmällisesti mitä olet tehnyt. Testaa lopputulos sekä kirjaa se raporttiin. Jos tulos ei ole toivottu, analysoi mistä ongelma voisi johtua. Jos vaikuttaa siltä, että ongelma ei ole sinun päässäsi, ilmoita siitä tarvittaessa eteenpäin sille kuuluville tahoille
 - Helppolukuisuus: Käytä muotoiluja oikein sekä kirjoita huolellista tekstiä. Muista tarkistaa teksti mahdollisilta kirjoitusvirheiltä
 - Lähdeviittaukset: Viittaa lähteisiin akateemisten käytäntöjen mukaisesti, oli kyseessä sitten asiantuntijan opinnäytetyö tai opiskelijakaverin raportti
 - Vakiotekstejä: Jos raporteissasi toistuu samat elementit (esim. GNU General Public Licensen käyttö), merkitse se yhtenäisesti raportteihin
