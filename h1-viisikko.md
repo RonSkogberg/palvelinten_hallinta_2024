@@ -1,12 +1,12 @@
 # x) Lue ja tiivistä
 
-## GitHub
+## GitHub (Karvinen 2023a)
 - Tee käyttäjätunnukset GitHubiin
 - Luo uusi repository
 - Luo uusi tiedosto luomaasi repositoryyn
 - Julkaise!
 
-## SALT
+## SALT (Karvinen 2021)
 - SALT:illa voit ohjata konettasi paikallisesti
 - pkg.installed – varmistaa (tietyn) palvelun olemassa-/poissaolon
 - file.managed – varmistaa (tietyn) tiedoston olemassa-/poissaolon
@@ -14,7 +14,7 @@
 - user.present – varmistaa (tietyn) käyttäjän olemassa-/poissaolon
 - cmd.run – suorittaa (mielivaltaisesti) komentoja koneella/koneilla
 
-## Raportointiohjeet
+## Raportointiohjeet (Karvinen 2006)
 - Raportoinnissa kirjataan ylös mitä tehdään ja mikä tärkeintä, mihin tekemiset johtavat
 - Erityisesti ongelmatilanteita kohdatessa hyvä raportointi auttaa hahmottamaan tilannetta ja helpottaa ongelmanratkaisua myös tulevaisuudessa
 - Toistettavuus: Samalla ohjeella toteutetut työt tulisivat tuottaa saman lopputuloksen. Muista raportoida myös käyttämääsi toimintaympäristöä
