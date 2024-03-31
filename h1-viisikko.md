@@ -25,14 +25,14 @@
 - Pahoja mokia: älä sepitä omiasi. Älä myöskään plagioi toisten töitä tai käytä toisten kuvia omissa teoksissasi. Viittaa aina lainattuun sisältöön lähdeviitteillä
 
 # a) Hello Windows/Mac Salt World!
-Asensin salt-minionin Windows-koneelleni Palvelinten hallinta -kurssin ensimmäisellä luennollame 26.3.2024 Tero Karvisen ohjaamana. Asennuksen onnistumisen voin todeta Windows PowerShellissä esimerkiksi seuraavalla komennolla: ``` get-service salt-minion```
+Asensin salt-minionin Windows-koneelleni Palvelinten hallinta -kurssin ensimmäisellä luennollame 26.3.2024 Tero Karvisen ohjaamana. Asennuksen onnistumisen voin todeta Windows PowerShellissä esimerkiksi seuraavalla komennolla: ```get-service salt-minion```
 
 ![salt-minion-asennettuna-pienempi](https://github.com/RonSkogberg/palvelinten_hallinta/assets/148875466/c49f76a0-e0f5-466d-8beb-29fca2a45506)
 
 Kuten tulostuksesta voidaan todeta, palvelu nimeltään salt-minion on asennettuna ja sen status on "Running", joten se on myös käynnissä.
 
 # b) Hello Vagrant!
-Salt-minionin tavoin asensin myös Vagrantin Windows-koneelleni kurssin ensimmäisellä luennolla. Vagrantin olemassaolon varmistin käyttäen komentoa: ``` vagrant --version```
+Salt-minionin tavoin asensin myös Vagrantin Windows-koneelleni kurssin ensimmäisellä luennolla. Vagrantin olemassaolon varmistin käyttäen komentoa: ```vagrant --version```
 
 ![vagrant-asennettua](https://github.com/RonSkogberg/palvelinten_hallinta/assets/148875466/21b6e471-83b1-4c9c-9536-45f131dae6c9)
 
@@ -51,10 +51,76 @@ Tarkistin virtuaalikoneen toiminnan ottamalla siihen SSH-yhteyden käyttäen ```
 ![vagrant_testaus](https://github.com/RonSkogberg/palvelinten_hallinta/assets/148875466/e50cb82d-ea30-421d-8189-6e2796ede1f1)
 
 # a) Asenna Salt (salt-minion) Linuxille (uuteen virtuaalikoneeseesi)
+Ollessani SSH-yhteydessä luomaani Linux-virtuaalikoneeseeni, halusin tarkistaa oliko Salt jo asennettuna siihen. Tähän käytin komentoa ```$ sudo servie salt-minion status```, jonka jälkeen tulostus ilmoittaa ettei näin ole ("Unit salt.minion.service could not be found."). Valmistelin salt-minionin asennusta käyttäen komentoa ```$ sudo apt-get update```, joka päivittää Linuxin pakettivarastot ajan tasalle, minkä jälkeen asensin salt-minionin virtuaalikoneelleni komennolla: ```$ sudo apt-get install salt-minion```.
+
+![salt-minion-asennus-linuxille](https://github.com/RonSkogberg/palvelinten_hallinta/assets/148875466/4acf3e35-7d57-4749-81f6-22b1bb98848f)
+
+Lopuksi tarkistin vielä salt-minionin olemassaolon ja toimivuuden komennolla ```$ sudo service salt-minion status```, joka kertoo kyseisen palvelun tilan. Tulostus ilmaisee tilan olevan "active (running)", mikä tarkoittaa että salt-minion on asennettu sekä toiminnassa.
+
+![salt-minion-testaus-linux](https://github.com/RonSkogberg/palvelinten_hallinta/assets/148875466/af730561-443c-4fd6-9528-a51eb6e72499)
 
 # b) Viisi tärkeintä
+Tässä tehtävässä keskityn viiteen tärkeimpään Saltin tilafunktioon. Käytin tehtävässä Tero Karvisen tekemiä materiaaleja (Karvinen 2021 & Karvinen 2024)
+
+## pkg.installed
+
+![pkg installed](https://github.com/RonSkogberg/palvelinten_hallinta/assets/148875466/572cc55f-4d30-478b-9d69-6fca72911950)
+
+```$ sudo salt-call --local -l info state.single pkg.installed nano```
+
+Tässä annan paikallisen salt-käskyn, joka tarkistaa onko nano-tekstieditorin asennettu, ja kuten kuvasta näkyy, on se jo esiasennettuna, eikä täten latausta tapahdu.
+Jos nanoa ei olisi ollut esiasennettuna, olisi tämä käsky ladannut ja asentanut sen.
+
+```$ sudo salt-call --local -l info state.single pkg.removed nano```
+
+Tällä salt-käskyllä olisin voinut poistaa kyseisen nano-tekstieditorin. En kuitenkaan halua tehdä sitä, sillä nano on must-have työkalu tekstipohjaisessa käyttöliittymässä. ;)
+
+## file.managed
+![file managed](https://github.com/RonSkogberg/palvelinten_hallinta/assets/148875466/116c79a3-dfc1-4a8c-a0ba-381e7ce52a2a)
+
+```$ sudo salt-call --local -l info state.single file.managed /home/vagrant/kiisu.txt```
+
+Tällä salt-käskyllä pystyn tarkistamaan onko tiedosto (tässä tapauksessa "kiisu.txt") olemassa. Koska kyseistä tiedostoa ei ollut olemassa, loi käsky sellaisen tiedoston. Tällaisten käskyjen jälkeen on aina hyvä tarkistaa lopputulos esimerkiksi ```$ ls -la``` komennolla.
+
+```$ sudo salt-call --local -l info state.single file.absent /home/vagrant/kiisu.txt```
+
+Tällä pystyn poistamaan kyseisen tiedoston, jos se on jo olemassa.
+
+## service.running
+![service](https://github.com/RonSkogberg/palvelinten_hallinta/assets/148875466/6d54b372-4a01-42b6-9c5d-d645fa46a6e2)
+
+```$ sudo salt-call --local -l info state.single service.running ssh enable=True```
+
+Tällä salt-käskyllä pystyn tarkistamaan onko esimerkiksi ssh käynnissä. Käynnissähän se on!
+
+```$ sudo salt-call --local -l info state.single service.dead ssh enable=False```
+
+Tällä käskyllä taas saan sen otettua pois päältä.
+
+## user.present
+![user](https://github.com/RonSkogberg/palvelinten_hallinta/assets/148875466/f49cb9d9-5efd-41d1-84dc-8e0b111ba9a6)
+
+```$ sudo salt-call --local -l info state.single user.present karvinen```
+
+Tällä salt-käskyllä pystymme tarkistamaan onko käyttäjää "karvinen" olemassa. Jos sitä ei ole, luo tämä käsky sellaisen. Käyttäjän tarkistus/poisto tapahtuu seuraavalla käskyllä:
+
+```sudo salt-call --local -l info state.single user.absent karvinen```
+
+## cmd.run
+![cmd](https://github.com/RonSkogberg/palvelinten_hallinta/assets/148875466/83e146c6-71ab-42ff-8eb7-874045c1d15c)
+
+```$ sudo salt-call --local -l info state.single cmd.run 'apt-get update'```
+
+Tällä salt-käskyllä pystyn suorittamaan esimerkiksi päivityskomentoja mielivaltaisesti.
 
 # c) Idempotentti
+Idempontti IT-maailmassa tarkoittaa tilaa, jossa toistettaessa samaa komentoa/käskyä useita kertoja, ei sen tulokset ensimmäisen kerran jälkeen muutu. Esimerkiksi tehtävässä "Viisi tärkeintä" loin "kiisu.txt" tiedoston käyttäen komentoa:
+
+```$ sudo salt-call --local -l info state.single file.managed /home/vagrant/kiisu.txt```
+
+Jos suoritan saman saman käskyn uudestaan, huomataan, että kyseinen tiedosto on jo olemassa. Täten uutta tiedostoa ei luoda, vaikka ensimmäisen kerran suorittaessa käskyn se loi kyseisen tiedoston. Täten vaikka toistaisimme kyseisen käskyn satoja kertoja, ei sen lopputulos muutu ensimmäisen käskykerran jälkeen.
+
+![potenssi](https://github.com/RonSkogberg/palvelinten_hallinta/assets/148875466/24f52ae3-d52d-4d4e-b0ba-ee6748912c1e)
 
 # d) Tietoa koneesta
 
