@@ -25,24 +25,30 @@
 - Pahoja mokia: älä sepitä omiasi. Älä myöskään plagioi toisten töitä tai käytä toisten kuvia omissa teoksissasi. Viittaa aina lainattuun sisältöön lähdeviitteillä
 
 # a) Hello Windows/Mac Salt World!
-Asensin salt-minionin Windows-koneelleni Palvelinten hallinta -kurssin ensimmäisellä opetuskerralla 26.3.2024 Tero Karvisen ohjaamana. Asennuksen onnistumisen voin todeta Windows PowerShellissä esimerkiksi seuraavalla komennolla:
-
-```$ get-service salt-minion```
+Asensin salt-minionin Windows-koneelleni Palvelinten hallinta -kurssin ensimmäisellä luennollame 26.3.2024 Tero Karvisen ohjaamana. Asennuksen onnistumisen voin todeta Windows PowerShellissä esimerkiksi seuraavalla komennolla: ``` get-service salt-minion```
 
 ![salt-minion-asennettuna-pienempi](https://github.com/RonSkogberg/palvelinten_hallinta/assets/148875466/c49f76a0-e0f5-466d-8beb-29fca2a45506)
 
-Kuten tulostuksesta voidaan todeta, on salt-minion asennettuna ja sen status on "Running", joten se on myös käynnissä.
+Kuten tulostuksesta voidaan todeta, palvelu nimeltään salt-minion on asennettuna ja sen status on "Running", joten se on myös käynnissä.
 
 # b) Hello Vagrant!
-Salt-minionin tavoin asensin myös Vagrantin Windows-koneelleni kurssin ensimmäisellä opetuskerralla. Vagrantin olemassaolon varmistin käyttäen komentoa:
-
-```$ vagrant --version```
+Salt-minionin tavoin asensin myös Vagrantin Windows-koneelleni kurssin ensimmäisellä luennolla. Vagrantin olemassaolon varmistin käyttäen komentoa: ``` vagrant --version```
 
 ![vagrant-asennettua](https://github.com/RonSkogberg/palvelinten_hallinta/assets/148875466/21b6e471-83b1-4c9c-9536-45f131dae6c9)
 
 Tulostus ilmoittaa Vagrantin version olevan 2.4.1 ja täten varmistaa sen olemassaolon.
 
 # c) Tee Vagrantilla uusi Linux-virtuaalikone.
+
+Ehdin harjoitella Linux-virtuaalikoneiden luontia Vagrantilla luennon aikana, joten seuraava tehtävä ei tuottanut ongelmia. Käyttäen komentoa ```vagrant init debian/bullseye64``` Vagrant luo Vagrantfile-konfiguraatiotiedoston, joka toimii niin sanotusti pohjana tuleville virtuaalikoneille. Edellä mainittu komento tarkentaa vielä, että haluan virtuaalikoneiden käyttävän Debian bullseyen 64-bittistä arkkitehtuuria. Tämän jälkeen varmistin vielä ```ls``` komennolla, että luomani Vagrantfile on luotu työhakemistooni ja siellähän se oli!
+
+![vagrant-asennus](https://github.com/RonSkogberg/palvelinten_hallinta/assets/148875466/10e3cd57-c4af-4747-b627-4f189f52e798)
+
+Tarkistuksen jälkeen suoritan vielä ```vagrant up``` komennon, joka luo uuden virtuaalikoneen käyttäen aiemmin luomani Vagrantfile-konfiguraatiotiedoston asetuksia. Pienen odottelun jälkeen uusi Debian-virtuaalikone oli luotu. 
+
+Tarkistin virtuaalikoneen toiminnan ottamalla siihen SSH-yhteyden käyttäen ```vagrant ssh``` komentoa. SSH-yhteyden luonti näytti onnistuvan, mutta tuplavarmistin olevani Linux-ympäristössä suorittamalla ```$ hostnamectl```, jonka tulostus paljasti virtuaalikoneeni olevan Debian-kone Linux-kernelillä.
+
+![vagrant_testaus](https://github.com/RonSkogberg/palvelinten_hallinta/assets/148875466/e50cb82d-ea30-421d-8189-6e2796ede1f1)
 
 # a) Asenna Salt (salt-minion) Linuxille (uuteen virtuaalikoneeseesi)
 
