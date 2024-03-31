@@ -1,7 +1,7 @@
 # x) Lue ja tiivistä
 
 ## GitHub (Karvinen 2023)
-- Tee käyttäjätunnukset GitHubiin)
+- Tee käyttäjätunnukset GitHubiin
 - Luo uusi repository
 - Luo uusi tiedosto luomaasi repositoryyn
 - Julkaise!
