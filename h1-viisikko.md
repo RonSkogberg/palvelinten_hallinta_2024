@@ -25,8 +25,22 @@
 - Pahoja mokia: älä sepitä omiasi. Älä myöskään plagioi toisten töitä tai käytä toisten kuvia omissa teoksissasi. Viittaa aina lainattuun sisältöön lähdeviitteillä
 
 # a) Hello Windows/Mac Salt World!
+Asensin salt-minionin Windows-koneelleni Palvelinten hallinta -kurssin ensimmäisellä opetuskerralla 26.3.2024 Tero Karvisen ohjaamana. Asennuksen onnistumisen voin todeta Windows PowerShellissä esimerkiksi seuraavalla komennolla:
+
+```$ get-service salt-minion```
+
+![salt-minion-asennettuna-pienempi](https://github.com/RonSkogberg/palvelinten_hallinta/assets/148875466/c49f76a0-e0f5-466d-8beb-29fca2a45506)
+
+Kuten tulostuksesta voidaan todeta, on salt-minion asennettuna ja sen status on "Running", joten se on myös käynnissä.
 
 # b) Hello Vagrant!
+Salt-minionin tavoin asensin myös Vagrantin Windows-koneelleni kurssin ensimmäisellä opetuskerralla. Vagrantin olemassaolon varmistin käyttäen komentoa:
+
+```$ vagrant --version```
+
+![vagrant-asennettua](https://github.com/RonSkogberg/palvelinten_hallinta/assets/148875466/21b6e471-83b1-4c9c-9536-45f131dae6c9)
+
+Tulostus ilmoittaa Vagrantin version olevan 2.4.1 ja täten varmistaa sen olemassaolon.
 
 # c) Tee Vagrantilla uusi Linux-virtuaalikone.
 
