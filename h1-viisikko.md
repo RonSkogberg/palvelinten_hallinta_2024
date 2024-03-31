@@ -114,7 +114,7 @@ Tällä salt-käskyllä pystymme tarkistamaan onko käyttäjää "karvinen" olem
 Tällä salt-käskyllä pystyn suorittamaan esimerkiksi päivityskomentoja mielivaltaisesti.
 
 # c) Idempotentti
-Idempontti IT-maailmassa tarkoittaa tilaa, jossa toistettaessa samaa komentoa/käskyä useita kertoja, ei sen tulokset ensimmäisen kerran jälkeen muutu. Esimerkiksi tehtävässä "Viisi tärkeintä" loin "kiisu.txt" tiedoston käyttäen komentoa:
+Idempontti IT-maailmassa tarkoittaa tilaa, jossa toistettaessa samaa komentoa useita kertoja, ei sen tulokset ensimmäisen kerran jälkeen muutu. Esimerkiksi tehtävässä "Viisi tärkeintä" loin "kiisu.txt" tiedoston käyttäen komentoa:
 
 ```$ sudo salt-call --local -l info state.single file.managed /home/vagrant/kiisu.txt```
 
@@ -123,6 +123,17 @@ Jos suoritan saman saman käskyn uudestaan, huomataan, että kyseinen tiedosto o
 ![potenssi](https://github.com/RonSkogberg/palvelinten_hallinta/assets/148875466/24f52ae3-d52d-4d4e-b0ba-ee6748912c1e)
 
 # d) Tietoa koneesta
+Suoritettuani seuraavan komennon, sain paljon hyödyllistä tietoa (virtuaali)koneestani, joista tosin en puolia ymmärtänyt. Sain poimittua sieltä kuitenkin esimerkiksi koneeni prosessoritietoja ja DNS-palvelimen IP-osoitteita:
+
+```$ sudo salt-call --local grains.items``` 
+
+![grains](https://github.com/RonSkogberg/palvelinten_hallinta/assets/148875466/6b077f6d-cf3a-4a6d-b159-7f2542840d21)
+
+Suorittamalla seuraavan komennon, sain vielä tietää virtuaalikoneeni käyttöjärjeslmätietoja:
+
+```$ sudo salt-call --local grains.item osfinger```
+
+![osfinger](https://github.com/RonSkogberg/palvelinten_hallinta/assets/148875466/da8fc606-b43f-43a4-915c-cc569fbfd826)
 
 ## References
 Karvinen 2006: Raportin kirjoittaminen. https://terokarvinen.com/2006/06/04/raportin-kirjoittaminen-4/
