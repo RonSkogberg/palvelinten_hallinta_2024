@@ -98,7 +98,8 @@ Tällä salt-käskyllä pystyn tarkistamaan onko esimerkiksi ssh käynnissä. K�
 Tällä käskyllä taas saan sen otettua pois päältä.
 
 ## user.present
-![user](https://github.com/RonSkogberg/palvelinten_hallinta/assets/148875466/f49cb9d9-5efd-41d1-84dc-8e0b111ba9a6)
+![user](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/4fb12c92-6cb3-49a2-b5a0-50dc38732c27)
+
 
 ```$ sudo salt-call --local -l info state.single user.present karvinen```
 
