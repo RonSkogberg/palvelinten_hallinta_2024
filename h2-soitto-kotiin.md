@@ -21,3 +21,10 @@
 ## f) Hello, IaC
 
 ## References
+
+Karvinen 2021
+
+
+
+
+Karvinen 2024: Infra as Code 2024. https://terokarvinen.com/2024/configuration-management-2024-spring/
