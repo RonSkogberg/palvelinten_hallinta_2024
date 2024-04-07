@@ -22,17 +22,25 @@ Otin molempiin virtuaalikoneisiin vuorollaan yhteyden ```vagrant ssh``` komennol
 ![4](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/82fbf3b9-8cae-4014-b4d4-22f9518726cc)
 
 ## b) Asenna Saltin herra-orja arkkitehtuuri toimimaan verkon yli
-Nyt kun yhteydet olivat toiminnassa, asensin seuraavaksi Saltin herra-orja arkkitehtuurin koneille. Aloitin asentamisen päivittämällä Linuxin pakettivarastot komennolla ```sudo upt-get update```, jonka jälkeen asensin Salt-masterin t001-koneelle komennolla ```sudo apt-get -y install salt-master```. Asennuksen jälkeen totesin salt-masterin asennuksen onnistuneen komennolla ```systemctl status salt-master```, jonka tulos näytti vihreätä.
+Nyt kun yhteydet olivat toiminnassa, asensin seuraavaksi Saltin herra-orja arkkitehtuurin koneille. Aloitin asentamisen päivittämällä Linuxin pakettivarastot komennolla ```$ sudo upt-get update```, jonka jälkeen asensin Salt-masterin t001-koneelle komennolla ```$ sudo apt-get -y install salt-master```. Asennuksen jälkeen totesin salt-masterin asennuksen onnistuneen komennolla ```$ systemctl status salt-master```, jonka tulos näytti vihreätä.
 
 ![5](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/579e06c8-9825-4bba-b3a3-52538cf37097)
 
 ![6](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/5541db0a-d097-476d-b198-7bd6c606c285)
 
-Toistin täysin samat toimenpiteet t002-koneella korvaten asennuskomennon ```sudo apt-get -y install salt-minion``` komennolla. Varmistin tälläkin kertaa salt-minionin toimivuuden ja sehän toimi.
+Toistin täysin samat toimenpiteet t002-koneella korvaten asennuskomennon ```$ sudo apt-get -y install salt-minion``` komennolla. Varmistin tälläkin kertaa salt-minionin toimivuuden ja sehän toimi.
 
 ![7](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/0c254c6f-506a-4766-94d9-cf6f3ce1c1cc)
 
 ![8](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/1c6ddc82-c6f1-468c-ab7f-f2733bab3c3f)
+
+Orjan tulee tietää, missä sen herra on, ja tähän tarvitsemme herrakoneen IP-osoitetta. Muokkasin orjakoneella (t002) ```$ sudoedit /etc/salt/minion``` komennolla /etc/salt -hakemistossa olevaa minion-tiedostoa, jonne lisäsin t001-koneen ip-osoitteen 192.168.88.101 sekä ID-nimen "ron". Lopuksi käynnistin salt-minionin uudestaan komennolla ```$ sudo systemctl restart salt-minion```, jotta päivittämäni asetukset astuvat voimaan.
+
+![12](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/603fd55c-8bd5-43fd-9d12-ee9cfc2399c9)
+
+Minun tuli vielä hyväksyä masterin puolella ron-minionin avain, jotta herra-orja-suhde olisi valmis. ```$ sudo salt-key -A``` komennolla tämä onnistui ja varmistin vielä ```$ sudo salt-key``` komennolla, että ron on hyväksyttyjen avaimien listalla. Lopuksi testasin yksinkertaisella ```$sudo salt '*' cmd.run 'whoami'``` komennolla, että saamme orjaan yhteyttä. Orja vastasi kutsuumme, eli kaikki toimii kuten halusimmekin.
+
+![14](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/eb04e830-b2f3-48c0-8553-e1066b755a0b)
 
 ## c) Aja shell-komento orjalla Saltin master-slave yhteyden yli
 
