@@ -16,7 +16,15 @@
 - git pull = Vetää repositorysta päivitetyimmän tiedon
 - git push = Työntää tehdyt muutokset kyseiseen repoon
 
-# 
+# Suolax (Karvinen 2024a)
+- Karvinen luo suolax-repon käyttäen GNU GENERAL PUBLIC LICENSE Version 3 -lisenssiä
+- Karvinen päivittää repon luomisvaiheessa luomaansa README.md -tiedostoa
+- Karvinen luo moduuli-tiedoston, joka Saltilla luo Hello World -tiedoston
+- Karvinen luo Makefile-tiedoston, joka sisältää ohjeita koskien edellistä luomaansa tiedostoa (O'reilly s.a)
+- Karvinen luo tila-tiedoston, joka asentaa lemppari sovelluksia, kuitenkin vasta pelkän "treen"
+- Karvinen päivittää aiemmin luomaansa tila-sovellusta lisäämällä asennettavia sovelluksia ja luo listan top.sls tiedostoon asennetuista sovelluksista
+- Karvinen siisti aiemmin luomaansa README.md -tiedostoa. Hän korvasi yhden Salt-komennon toisella
+- Karvinen päivitti luomiaan käyttöohjeita
 
 ## a) Online
 
@@ -92,6 +100,10 @@ DataCamp 2019: GIT Push and Pull Tutorial. https://www.datacamp.com/tutorial/git
 
 Git s.a. 1.3 Getting Started - What is Git? https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F
 
-Karvinen 2024: Infra as Code 2024. https://terokarvinen.com/2024/configuration-management-2024-spring/
+Karvinen 2024a: suolax. https://github.com/terokarvinen/suolax/
+
+Karvinen 2024b: Infra as Code 2024. https://terokarvinen.com/2024/configuration-management-2024-spring/
+
+O'reilly s.a. 1.15. Building A Simple “Hello, World” Application with GNU make. https://www.oreilly.com/library/view/c-cookbook/0596007612/ch01s16.html
 
 Polvinen 2020: Pieni Git-opas. 2.2 Paikallisen commitin muokkaus (git amend). University of Turku. Luettavissa: https://vm.utu.fi/document/fi_pieni-git-opas.pdf
