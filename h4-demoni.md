@@ -22,7 +22,7 @@
 
 - Tämän jälkeen sinun ei tarvitse nimetä erikseen eri moduleita suorittaessasi komentoja. Esimerkiksi ```$ sudo salt '*' state.apply``` suorittaa hellon automaattisesti kaikille orjille
 
-### Rules of YAML
+### Rules of YAML (Salt Project s.a.)
 
 - YAML on merkintäkieli, jonka tehtävänä on kääntää sen tietorakenteet Python-muotoon Salt:ia varten
 
@@ -32,16 +32,17 @@
   - Isoilla ja pienillä kirjaimilla on merkitystä
   - Käytä sisennyksessä välilyöntejä, älä tabulaattoria
 
-### YAML simple structure
+### YAML simple structure (Salt Project s.a.)
 
 - YAML koostuu kolmesta perus elementtityypistä:
   - Skalaarit (scalars) ovat avain: arvo kartoituksia, joissa arvo voi olla numero, merkkijono tai totuusarvomuuttuja
   - Listat (lists) ovat luetteloita, joissa avaimilla voi olla useampia arvoja. Ne merkitään avaimesta seuraavalle riville sisennetyillä tavuviivoilla allekkain
   - Sanastot (dictionaries) ovat kokoelmia avain-arvo kartoituksista ja listoista
 
-### Lists and dictionaries - YAML block structures
-
-###
+### Lists and dictionaries - YAML block structures (Salt Project s.a.)
+- YAML on jaettu lohkoiksi.
+- Sisennysten käyttö on tärkeää, sillä se määrittää kontekstin. Tämä tapahtuu yleensä kahdella välilyönnillä
+- Listan tai sanaston tyyppinen kokoelma merkitään väliviivalla ja välilyönnillä, esim. ("- ")
 
 ## a) Hello SLS!
 
@@ -53,8 +54,10 @@
 
 ## References
 
-Salt Project s.a. Salt overview. https://docs.saltproject.io/salt/user-guide/en/latest/topics/overview.html
+Karvinen 2018
 
 Karvinen 2023: Salt Vagrant - automatically provision one master and two slaves. https://terokarvinen.com/2023/salt-vagrant/#infra-as-code---your-wishes-as-a-text-file
 
 Karvinen 2024: Infra as Code 2024. https://terokarvinen.com/2024/configuration-management-2024-spring
+
+Karvinen 2018: Pkg-File-Service – Control Daemons with Salt – Change SSH Server Port. https://terokarvinen.com/2018/04/03/pkg-file-service-control-daemons-with-salt-change-ssh-server-port/?fromSearch=karvinen%20salt%20ssh
