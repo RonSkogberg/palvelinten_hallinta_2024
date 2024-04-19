@@ -54,7 +54,7 @@
 
 ## References
 
-Karvinen 2018
+Salt Project s.a.: salt.states.file. https://docs.saltproject.io/en/latest/ref/states/all/salt.states.file.html#salt.states.file.keyvalue
 
 Karvinen 2023: Salt Vagrant - automatically provision one master and two slaves. https://terokarvinen.com/2023/salt-vagrant/#infra-as-code---your-wishes-as-a-text-file
 
