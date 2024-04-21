@@ -46,9 +46,34 @@
 
 ## a) Hello SLS!
 
+Tässä tehtävässä aloitan vaatimattomasti tekemällä Hei maailma -tilan kirjoittamalla sen init.sls tiedostoon. init.sls on Saltin konfiguraatiotiedosto, jonne voimme määritellä orjien hallinnointiin käytettäviä konfiguraatioita. Tehtävän alussa luon Saltin päähakemistoon, uuden hakemiston nimeltään "heippa". Tänne luon init.sls tiedoston, jonka sisälle määrittelen file.managed-tilan, joka luo tiedosto "heipparon" haluamaani kohdekakemistoon. Suorittamalla ```$ sudo salt '*' state.apply heippa``` komennon, tulee init.sls konfiguraatiot käyttöön kaikilla orja-koneilla. Lopuksi vielä toistin komennon varmistaakseni harmonisen tilan.
+
+![1](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/69e2ff38-165f-47bd-bacf-81481177cd60)
+
 ## b) Top
 
+Tässä tehtävänäni on luoda top.sls, jonka avulla määritetään mitä joukkomäärityksiä suoritetaan orjille. Luon top.sls tiedoston Saltin päähakemistoon ja konfiguroin sen sisälle listan, jonka sisällä olevat tilat suoritetaan orjille, kun käytän komentoa ```$ sudo salt '*' state.apply```. Koska aiemmassa tehtävässä loin jo heipparon-tiedoston orjille, ei tämä komento tehnyt mitään muutoksia.
+
+![2](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/8e2c1c90-d4ba-4f23-a0fb-46e049cc59b2)
+
+Huomasin näin jälkikäteen, että tehtävässä pyydettiin luomaan "useita" tiloja, joita tässä ajetaan, mutta jatkoin käyttämällä aiemmassa tehtävässä luomaani "heippaa". Käytännössä eri tiloja pystyy suorittaa luomalla useita eri hakemistoja, joihin konfiguroin eri init.sls tiedostoja, esimerkiksi pkg.installed. Lopuksi listaan kaikki tilat tähän top.sls tiedostoon.
+
+Halusin vielä testata top.sls toimivuuden tekemällä muutoksia "heippa" hakemiston init.sls tiedostoon. Lisäsin konfiguraatiokäskyyn lisäyksen, että heipparon tulee sisältää tekstin "top.sls muutosteksti". Tämän jälkeen tallensin init.sls:än ja suoritin ```$ sudo salt '*' state.apply``` jälleen kerran. Tulostus ilmoitti muutoksien tapahtuneen.
+
+![3](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/0b31a357-15c5-4c42-a365-1ddc460c2f20)
+
+Suoritettuani testit herra-koneellani, kävin vielä orja-koneellani tarkistamassa lisäämäni kommentin syntymisen. "top.sls muutosteksti" oli lisätty heipparon-tiedostoon orja-koneellani, joten testi näyttäisi onnistuneen.
+
+![4](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/c794a66b-b494-4666-994d-870bdedf5897)
+
 ## c) Apache easy mode
+
+![6](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/670eeff3-405d-4bf3-9ca0-318032cb8c1d)
+
+![7](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/36c4f509-097b-4abb-8513-f23224d1d8fb)
+
+![8](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/92a6abe7-8c67-4dfa-9261-d6a3d5a3b73f)
+
 
 ## d) SSHouto
 
