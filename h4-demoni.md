@@ -44,13 +44,13 @@
 - Sisennysten käyttö on tärkeää, sillä se määrittää kontekstin. Tämä tapahtuu yleensä kahdella välilyönnillä
 - Listan tai sanaston tyyppinen kokoelma merkitään väliviivalla ja välilyönnillä, esim. ("- ")
 
-## a) Hello SLS!
+## a) Hello SLS! (Karvinen 2024)
 
 Tässä tehtävässä aloitan vaatimattomasti tekemällä Hei maailma -tilan kirjoittamalla sen init.sls tiedostoon. init.sls on Saltin konfiguraatiotiedosto, jonne voimme määritellä orjien hallinnointiin käytettäviä konfiguraatioita. Tehtävän alussa luon Saltin päähakemistoon, uuden hakemiston nimeltään "heippa". Tänne luon init.sls tiedoston, jonka sisälle määrittelen file.managed-tilan, joka luo tiedosto "heipparon" haluamaani kohdekakemistoon. Suorittamalla ```$ sudo salt '*' state.apply heippa``` komennon, tulee init.sls konfiguraatiot käyttöön kaikilla orja-koneilla. Lopuksi vielä toistin komennon varmistaakseni harmonisen tilan.
 
 ![1](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/69e2ff38-165f-47bd-bacf-81481177cd60)
 
-## b) Top
+## b) Top (Karvinen 2024)
 
 Tässä tehtävänäni on luoda top.sls, jonka avulla määritetään mitä joukkomäärityksiä suoritetaan orjille. Luon top.sls tiedoston Saltin päähakemistoon ja konfiguroin sen sisälle listan, jonka sisällä olevat tilat suoritetaan orjille, kun käytän komentoa ```$ sudo salt '*' state.apply```. Koska aiemmassa tehtävässä loin jo heipparon-tiedoston orjille, ei tämä komento tehnyt mitään muutoksia.
 
@@ -68,7 +68,7 @@ Suoritettuani testit herra-koneellani, kävin vielä orja-koneellani tarkistamas
 
 ![15](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/ac52a4b9-e0e7-4e52-bc8f-b5db13268f6e)
 
-## c) Apache easy mode
+## c) Apache easy mode (Karvinen 2024)
 
 Tässä tehtäväni on asentaa Apache, korvata sen testisivu ja varmistaa demonin käynnistys. Aloitan tehtävän luomalla init.sls-tiedoston /srv/salt/apache hakemistoon herra-koneella. Määrittelen konfiguraatiotiedostoon Apachen asennksen sekä ron.conf-tiedoston sijaintiasetukset sekä symbolisen linkin. 
 
@@ -90,11 +90,17 @@ Minun tuli vielä muokata init.sls tiedostoa apache-hakemistossa ja lisätä apa
 
 ![14](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/ee05eb5f-b9b4-4344-b6db-8a49ec99fbf8)
 
-## d) SSHouto
+## d) SSHouto (Karvinen 2024)
+
+Tässä tehtävässä minun tulee lisätä uusi portti, jossa SSHd kuuntelee. Aloitin tehtävän muokkaamalla /etc/ssh/sshd_config-tiedostoa, jonne lisäsin portin 22 kaveriksi portin 1234. 
 
 ![11](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/832995f0-47d5-43e9-b862-d6c4c44c7fed)
 
+Käynnistettyäni SSH-palvelun uudestaan tarkistin myös ```$ nc -vz localhost ...``` komennolla, että portit ovat auki. Tulostus kertoo, että aukihan ne ovat.
+
 ![13](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/bb48c929-f635-4aa2-b963-6c0f295e82f8)
+
+Tässä kohtaa jäin pohtimaan, että mitä muuta minun tulisi tehdä. Olin lisännyt uuden portin ja varmistanut sen aukiolon, mutten aivan hiffannut miten tästä tulisi jatkaa. Pitääpä käydä keskustelua kurssikaverin kanssa siitä, että miten hän on tehtävän kanssa edennyt.
 
 ## References
 
