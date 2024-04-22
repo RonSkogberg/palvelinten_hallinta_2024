@@ -66,16 +66,35 @@ Suoritettuani testit herra-koneellani, kävin vielä orja-koneellani tarkistamas
 
 ![4](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/c794a66b-b494-4666-994d-870bdedf5897)
 
+![15](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/ac52a4b9-e0e7-4e52-bc8f-b5db13268f6e)
+
 ## c) Apache easy mode
+
+Tässä tehtäväni on asentaa Apache, korvata sen testisivu ja varmistaa demonin käynnistys. Aloitan tehtävän luomalla init.sls-tiedoston /srv/salt/apache hakemistoon herra-koneella. Määrittelen konfiguraatiotiedostoon Apachen asennksen sekä ron.conf-tiedoston sijaintiasetukset sekä symbolisen linkin. 
 
 ![6](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/670eeff3-405d-4bf3-9ca0-318032cb8c1d)
 
 ![7](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/36c4f509-097b-4abb-8513-f23224d1d8fb)
 
+Yrittäessäni suorittaa apachen asennusta komennolla ````$ sudo salt-call --local --state-output=terse state.apply apache``` kohtasin ongelman: Vain 2/3 tilasta onnistui ja keskimmäinen kohta huusi punaista. 
+
 ![8](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/92a6abe7-8c67-4dfa-9261-d6a3d5a3b73f)
 
+Ongelma ei sinänsä ollut suuri, sillä tulostuksesta käy ilmi, että olin unohtanut kopioida ron.conf tiedoston /etc/apache2/sites-available/ -hakemistosta /srv/salt/apache hakemistoon. Ollessani .../sites-available/ hakemistossa suoritin ```$ sudo cp ron.conf /srv/salt/apache/```. Tämä kopioi tiedoston myös apache-hakemistoon ja suorituksen jälkeen 3/3 kohtaa näyttivät vihreätä!
+
+![9](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/a9a6aa06-1f49-411c-b3b5-b5fe86f9a41c)
+
+![15](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/eba0dd02-642b-4e10-864a-518e9bd51630)
+
+Minun tuli vielä muokata init.sls tiedostoa apache-hakemistossa ja lisätä apache2.service lisäys, jotta ohjelma käynnistyy aina, kun muutoksia tapahtuu. Lopuksi suoritin tilan ja kaikki näyttää toimivan hyvin.
+
+![14](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/ee05eb5f-b9b4-4344-b6db-8a49ec99fbf8)
 
 ## d) SSHouto
+
+![11](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/832995f0-47d5-43e9-b862-d6c4c44c7fed)
+
+![13](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/bb48c929-f635-4aa2-b963-6c0f295e82f8)
 
 ## References
 
