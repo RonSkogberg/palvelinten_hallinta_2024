@@ -74,6 +74,16 @@ Suoritin kotihakemistossani saman komennon.
 
 ![tulos1](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/faa0b9bc-e355-4143-b077-77af2ba6810d)
 
+![final3](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/b99934a0-b826-47f9-8046-680273830a96)
+
+![final2](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/7bae101d-f29e-417a-a0a9-86a995336230)
+
+![orjandatefinal](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/d34a4eb8-7524-40fa-b6d3-cee66298d508)
+
+![osa1final](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/2d1ab6a3-5c76-41b1-996d-d274797dc727)
+
+![osa2final](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/a29b9a62-97bb-4dbc-a969-1ab8f541875f)
+
 ## References
 
 nixCraft 2024. How to find the oldest file in Linux / Unix file system. https://www.cyberciti.biz/link/how-to-find-the-oldest-file-in-a-directory-tree/
