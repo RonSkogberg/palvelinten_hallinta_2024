@@ -8,7 +8,7 @@ Tehtävässä Seppä:
 ```bash
 #!/bin/bash # Tämä määrittää oletukseksi bashin.
 sudo apt-get update # Tämä päivittää Linuxissa uusimmat pakettivarastot.
-sudo apt-get install -y salt-minion # Tämä asentaa koneelle salt-minionin. "-y" Suorittaa hyväksyttää automaattisesti kaikki kohdat, joissa käyttäjältä kysytään yes/no -kysymyksiä.
+sudo apt-get install -y salt-minion # Tämä asentaa koneelle salt-minionin. "-y" Hyväksyttää automaattisesti kaikki kohdat, joissa käyttäjältä kysytään yes/no -kysymyksiä.
 echo master: 104.248.143.181$’\r’id: orja1 | sudo tee /etc/salt/minion # Tämä lisää Salt-masterin IP-osoitteen ja käyttäjän ID:n tiedostoon /etc/salt/minion, jotta tietokone voi tunnistaa ja yhdistyä oikeaan Salt-masteriin.
 sudo systemctl restart salt-minion # Tämä uudelleenkäynnistää salt-minionin
 ```
