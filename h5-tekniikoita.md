@@ -68,6 +68,12 @@ Suoritin kotihakemistossani saman komennon.
 
 ```$ find -printf '%T+ %p\n' | sort``` Komennossa "find" on etsintäkomento, joka suorittaa tiedostohakuja hakemistorakenteista käyttäjän määrittelyjen mukaisesti. ```-printf '%T+ %p\n'``` avulla printattuun hakutulosteeseen sisältyy tiedostojen muokkausaika (%T+) ja sen polku (%p). Lopuksi ```| sort``` lajittelee tulostetut tiedostot niiden muokkausaikojen mukaan.
 
+## e) Komennus (HUOM. Virheellisesti jäänyt pois alkuperäisestä 29.4.2024 palautuksesta, joten lisätty jälkikäteen 30.4.2024)
+
+![final1](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/bbb88713-eb37-4a03-b75f-ed7312346320)
+
+![tulos1](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/faa0b9bc-e355-4143-b077-77af2ba6810d)
+
 ## References
 
 nixCraft 2024. How to find the oldest file in Linux / Unix file system. https://www.cyberciti.biz/link/how-to-find-the-oldest-file-in-a-directory-tree/
