@@ -29,15 +29,22 @@
 - Tämä kloonaa winrepo-repositoryn minionille winrepo_dir_ng -hakemistoon, jonka jälkeen pakettien määrittelytiedostot (.sls) haetaan Git-reposta
 
 ### Update minion database
--
--
--
--
-
+- Suorita pkg.refresh_db Windowsin minioneilla päivittääksesi pakettitietokannat
+  - Master-ympäristössä komennolla: ```salt -G 'os:windows' pkg.refresh_db```
+  - Masterless ympäristössä komennolla: ```salt-call --local pkg.refresh_db```
+- Edellä mainitut komennot päivittävät YAML/JINJA-paketinmäärittelytiedostot ja tulostavat pakettien päivitystietoja (mm. statistiikkaa onnistuneista/epäonnistuneista päivityksistä)
 
 ### Install software package
+- Voit asentaa ohjelmapaketteja (esim. Firefoxin) käyttäen ```pkg.install``` komentoa:
+  - Master-ympäristössä: ```salt * pkg.install 'firefox_x64'```
+  - Masterless-ympäristössä: ```salt-call --local pkg.install "firefox_x64"```
 
 ### Usage
+- Windows-paketinhallinnan alustavien tehtävien jälkeen voit käyttää Saltin paketinhallintakomentoja Windows-minioneilla. Esimerkkinä näistä toimii:
+  - ```pkg.list_pkgs``` (Listaa järjestelmään asennetut paketit)
+  - ```pkg.list_available``` - 
+  - ```pkg.install``` - Asentaa (määritellyn) paketin
+  - ```pkg.remove``` - Poistaa (määritellyn) paketin
 
 ## a) Paketti Windowsia
 
