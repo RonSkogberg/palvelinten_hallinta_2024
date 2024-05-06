@@ -41,8 +41,8 @@
 
 ### Usage
 - Windows-paketinhallinnan alustavien tehtävien jälkeen voit käyttää Saltin paketinhallintakomentoja Windows-minioneilla. Esimerkkinä näistä toimii:
-  - ```pkg.list_pkgs``` (Listaa järjestelmään asennetut paketit)
-  - ```pkg.list_available``` - 
+  - ```pkg.list_pkgs``` Listaa järjestelmään asennetut paketit
+  - ```pkg.list_available``` - Listaa saatavilla olevat paketit
   - ```pkg.install``` - Asentaa (määritellyn) paketin
   - ```pkg.remove``` - Poistaa (määritellyn) paketin
 
@@ -61,10 +61,11 @@ Päätin asentaa 7-Zip pakkausohjelman. Tämä onnistui yksinkertaisesti komenno
 Tässä tehtävässä minun tuli etsiä 3-7 keskitetyn hallinnan projektia, joita minun tuli arvioida.
 
 ### Janne Mustosen projekti (Mustonen 2020)
+
 Tarkoitus:
   - Mustosen projektin tarkoituksena on luoda tila, jonka suorittamalla valmiiksi määritetyt ohjelmat asentuvat uusille koneille valmiiksi konffattuina. Tämän tarkoituksena on helpottaa/nopeuttaa uusien koneiden alustusta (esimerkiksi yritysympäristössä)
-Lisenssi
 
+Lisenssi:
   - Mustonen ei ole erikseen Wordpress-artikkelissaan määritellyt käyttämäänsä lisenssiä. Wordpress yleisesti käyttää GNU General Public License (GPLv2 tai tuoreempi) -lisenssiä, joka avoimen lähdekoodin lisenssin kautta antaa käyttäjälle laajat käyttöoikeudet, mutten näin epäselvässä tilanteessa uskaltaisi käyttää/soveltaa Mustosen projektia sen arvioinnin lisäksi
 
 Tekijä & vuosi:
@@ -79,39 +80,63 @@ Kiinnostavaa:
 Avoimet Kysymykset ja muut huomiot:
   - Raportin synty ja sen tavoitteet oli mielestäni kuvailtu hyvin. Aihe oli tarpeeksi yksinkertainen, mutta juuri sellainen jota pienellä muokkauksella voi soveltaa useisiin eri ympäristöihin (koti-/yrityskoneisiin). Mielestäni myös tiiviisti kirjoitettu ja selkeästi ilmaistu, mitä mikäkin konfiguraatio muodostuu ja mistä ne on opittu/lainattu
 
-### Janne Mustosen projekti
+### Toni Vapalon projekti (Vapalo 2021)
 Tarkoitus:
-  -
-Lisenssi:
-  -
-Tekijä & vuosi:
-  - Janne Mustonen (2020)
-Riippuvuudet:
-  -
-Kiinnostavaa:
-  -
+  - Vapalon projektin tarkoituksena on automatisoida Saltin avulla kaksi kehitysympäristöä (Python flask & React). Kehitysympäristöjen automatisoinnin hyötynä on, että uusien ympäristöjen uudelleenluonti on nopeaa, jos esimerkiksi käyttäjä tekee testejä eri ympäristöissä ja ympäristöt esimerkiksi hajoavat. 
 
-### Janne Mustosen projekti
-Tarkoitus:
-  -
 Lisenssi:
-  -
+  - Vapalo ei ole sivustonsa artikkelissa määrittänyt mitään lisenssiä, mutta hänen linkkaamassaan GitHub-repossaan (jossa on projektiin liittyvää aineistoa), hän käyttää GPL-3.0 lisenssiä. Kuten Mustosen Lisenssi-osiossa ilmaisinkin, antaa GPL-lisenssi käyttäjälle yleismaalliset vapaudet muokata sekä käyttää hänen luomaansa sisältöä omiin tarkoituksiinsa
+
 Tekijä & vuosi:
-  - Janne Mustonen (2020)
+  - Toni Vapalo (2021)
+
 Riippuvuudet:
-  - Ubuntu (+ muut Debian-perheen distrot), Atom- & Stacer-repository
+  - Debian 10, GitHub, vbox.list
+
 Kiinnostavaa:
-  - 
+  - Vaikkei lopputulos kuvastanut alkutavoitteita, oli ympäristöjen luominen yleisesti ottaen onnistunut. Kuvittelisin tästä olevan pienellä viilauksilla hyötyä jollekin, joka haluaa luoda tämän kaltaisia kehitysympäristöjä
+
 Avoimet Kysymykset ja muut huomiot:
+  - Ihan hyvä raportti näin yleisesti. Kuvia oli paljon, ehkä vähän liikaakin, mutta parempi niin kuin päinvastoin
 
+### Simo Tossavaisen projekti (Tossavainen 2021)
+Tarkoitus:
+  - Tossavaisen projektin tarkoituksena on luoda simppeli hyötyohjelmamoduli, vähän samantapainen kuin Mustosella, mutta tässä hän myös konfiguroi Firefoxin asetukset tottumustensa mukaisiksi. Tällainen ratkaisu on hyvä, jos haluaa luoda valmiin asennustilan, jonka suorittaa esimerkiksi aina uuden koneen hankkiessaan, jolloin itselle suotuisat asetukset ovat aina valmiina heti asennuksen jälkeen
 
+Lisenssi:
+  - Tossavainen ilmoittaa lisenssikseen GNU GENERAL PUBLIC LICENSE, eli hänen tuotoksensa on vapaata riistaa omaan käyttöön avoimen GPL-lisenssin mukaisesti
+
+Tekijä & vuosi:
+  - Simo Tossavainen (2021)
+
+Riippuvuudet:
+  - Mozilla Firefox, tree, Libreoffice, 
+
+Kiinnostavaa:
+  - find-komennon käyttö oli hyvä tapa löytää Firefoxin suorittamia muutoksia. Komennon avulla Tossavainen pystyi helposti päättelemään mitä hänen Firefoxin työpöydällä tekemät muutokset muokkasivat, jolloin niiden poimiminen oli helppoa
+
+Avoimet Kysymykset ja muut huomiot:
+  - Simppeli, mutta informoiva ohje kuinka asentaa ohjelmia Saltilla. Kiinnostavampi osuus tehtävässä oli Firefoxin konfigurointien metsästys ja muokkaus
 
 ## c) Testbench
 
+Tässä tehtävässä minun tulee ajaa jonkun edellisen tehtävän tiloista. Valitsin Simo Tossavaisen projektin, sillä se oli sopivan simppeli meikäläisen makuun, enkä ollut käyttänyt Apachen find-komentoa muutamaa kertaa enempää. Projektissa käytetyt ratkaisut eivät myöskään lataa mitään paketinhallinnan ulkopuolelta, joten se on turvallinen ratkaisu tällaiseen testailuun. 
+
 ## d) Viisi idea
+
+Tässä tehtävässä minun tulee listata viisi ideaa omalle modulille. 
+
+Mahdollisia moduli-ideoita ovat esimerkiksi:
+  - Opiskelijoille sopivan paketinasennustilan luominen (Asentaa listan ohjelmistoja useille minioneille. Paketteja kuten Blender, Shotcut, Scilab...)
+  - 
+  -
+  -
+  -
 
 ## References
 
 Mustonen, J. 2020. Oma moduuli h7(Palvelinten hallinta). Lähde: https://jannelinux.design.blog/2020/05/19/oma-moduuli-h7/
 
+Vapalo, T. 2021. Oma moduli. Lähde: https://tonivapalo.com/posts/palvelintenhallinta/phvt7/
 
+Tossavainen, S. 2021. h7 Oma moduli. Lähde: https://simotossavainen.wordpress.com/2021/05/19/h7-oma-moduli/
