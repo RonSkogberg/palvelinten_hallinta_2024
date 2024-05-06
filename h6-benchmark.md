@@ -1,6 +1,6 @@
 # h6 Benchmark
 
-## x) Lue ja tiivistä
+## x) Lue ja tiivistä (Salt Project. s.a.)
 
 ### Introduction
 - Saltilla on mahdollista suorittaa Windowsin paketinhallinnointia, johon kuuluu pakettien:
@@ -120,7 +120,9 @@ Avoimet Kysymykset ja muut huomiot:
 
 ## c) Testbench
 
-Tässä tehtävässä minun tulee ajaa jonkun edellisen tehtävän tiloista. Valitsin Simo Tossavaisen projektin, sillä se oli sopivan simppeli meikäläisen makuun, enkä ollut käyttänyt Apachen find-komentoa muutamaa kertaa enempää. Projektissa käytetyt ratkaisut eivät myöskään lataa mitään paketinhallinnan ulkopuolelta, joten se on turvallinen ratkaisu tällaiseen testailuun. 
+Tässä tehtävässä minun tulee ajaa jonkun edellisen tehtävän tiloista. Valitsin Simo Tossavaisen projektin, sillä se oli sopivan simppeli meikäläisen makuun, enkä ollut käyttänyt Apachen find-komentoa muutamaa kertaa enempää. Projektissa käytetyt ratkaisut eivät myöskään lataa mitään paketinhallinnan ulkopuolelta, joten se on turvallinen ratkaisu tällaiseen testailuun.
+
+[Päivitän tätä vielä 6.5.2024]
 
 ## d) Viisi idea
 
@@ -128,12 +130,16 @@ Tässä tehtävässä minun tulee listata viisi ideaa omalle modulille.
 
 Mahdollisia moduli-ideoita ovat esimerkiksi:
   - Opiskelijoille sopivan paketinasennustilan luominen (Asentaa listan ohjelmistoja useille minioneille. Paketteja kuten Blender, Shotcut, Scilab...)
-  - 
-  -
-  -
-  -
+  - Sääpalvelu (Hakee tietoja netistä ja palauttaa ne käyttäjälle)
+  - Muistiinpanojen hallinta (Hyvä opiskelijalle, joka haluaa hallinoidun tavan hallita muistiinpanoja Saltia käyttäen)
+  - Tyhjien koneiden automaattinen luonti konfiguroiduilla asetuksilla
+  - Oppimispäiväkirjan ylläpito
 
 ## References
+
+Salt Project. s.a. Windows Package Manager. Lähde: https://docs.saltproject.io/en/latest/topics/windows/windows-package-manager.html#list-pkgs
+
+Karvinen, T. 2024. Infra as Code - Palvelinten hallinta 2024. Lähde: https://terokarvinen.com/2024/configuration-management-2024-spring/
 
 Mustonen, J. 2020. Oma moduuli h7(Palvelinten hallinta). Lähde: https://jannelinux.design.blog/2020/05/19/oma-moduuli-h7/
 
