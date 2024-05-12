@@ -70,19 +70,35 @@ Suoritin kotihakemistossani saman komennon.
 
 ## e) Komennus (HUOM. Virheellisesti jäänyt pois alkuperäisestä 29.4.2024 palautuksesta, joten lisätty jälkikäteen 30.4.2024)
 
+Tässä osiossa tehtävänäni on tehdä Salt-tila, joka asentaa järjestelmään uuden komennon. Päätin luoda tilan, jonka suorittamalla minionit päivittävät heidän pakettivarastonsa ja tarvittaessa asentavat tuoreet päivitykset. Lisäsin myös läpinäkyvyyttä lisäävän ilmoituksen, joka ilmoittaa jos päivitettävää on tai ei ole.
+
 ![final1](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/bbb88713-eb37-4a03-b75f-ed7312346320)
+
+Luon scriptitiedoston, jossa määrittelen käyttämäni komennot. Lopuksi tallennan ja lisään suoritusoikeudet script-tiedostoon paivitys.sh
 
 ![tulos1](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/faa0b9bc-e355-4143-b077-77af2ba6810d)
 
+Suoritan komennon, mutta tulostus ilmoittaa ongelmista isoilla punaisilla E-kirjaimilla. Päättelin nopeasti vian johtuvasta virtuaalikoneiden väärästä kellonajasta. Korjaan ongelman asettamalla ajan oikeaksi manuaalisesti komennoilla ```$ sudo timedatectl set-ntp no``` & ```$ sudo date 043009152024```. Lopuksi suoritan scripti-komennon uudestaan.
+
 ![final3](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/b99934a0-b826-47f9-8046-680273830a96)
+
+Tällä kertaa pakettienpäivitys meni läpi ja tlostus ilmoittaa ettei master-koneellani ole mitään päivitettävää. Hienoa!
 
 ![final2](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/7bae101d-f29e-417a-a0a9-86a995336230)
 
+Kopioin luomani paivtytys.sh tiedoston uuteen sijaintiin masterillani ja luon ```$ sudoedit init.sls``` komennolla tilatiedoston. Lisään tähän tiedot paivitys-tiedoston sijainnista ja suoritusoikeudet "0755". Yritin suorittaa kyseiset tilat kaikille minioneille ```$ sudo salt '*' state.apply paivitys``` komennolla, mutta tulostus syöksee punaista. Olin unohtanut .sh-lopun init.sls "paivitys" kohdasta, niin korjasin asian ja suoritin tilan kaikille orjille uudelleen.
+
 ![orjandatefinal](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/d34a4eb8-7524-40fa-b6d3-cee66298d508)
+
+Tällä kertaa tuloste oli pelkkää vihreää, eli kaikki on hyvin? No ei aivan. Luettuani tulostusta tarkemmin se antaa ymmärtää, ettei pakettien päivitys/asennus onnistunut. Missäköhän on vika...
 
 ![osa1final](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/2d1ab6a3-5c76-41b1-996d-d274797dc727)
 
+...No tietysti orjakoneen kellossa. Kävin orjakoneella korjaamassa kellonajan samalla tyylillä, kuin tein master-koneeni kanssa ja siirryin masterille suorittamaan tilat kaikille orjille.
+
 ![osa2final](https://github.com/RonSkogberg/palvelinten_hallinta_2024/assets/148875466/a29b9a62-97bb-4dbc-a969-1ab8f541875f)
+
+Tällä kertaa tiloja pystyttiin suorittaa ja pakettien päivitys/asennus onnistui. Tai no tulostus ilmoittaa ettei asennettavia paketteja ollut ja toivotti minulle hyvää päivänjatkoa. Kaikki kuitenkin toimii!
 
 ## References
 
