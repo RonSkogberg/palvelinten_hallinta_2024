@@ -68,7 +68,7 @@ Suoritin kotihakemistossani saman komennon.
 
 ```$ find -printf '%T+ %p\n' | sort``` Komennossa "find" on etsintäkomento, joka suorittaa tiedostohakuja hakemistorakenteista käyttäjän määrittelyjen mukaisesti. ```-printf '%T+ %p\n'``` avulla printattuun hakutulosteeseen sisältyy tiedostojen muokkausaika (%T+) ja sen polku (%p). Lopuksi ```| sort``` lajittelee tulostetut tiedostot niiden muokkausaikojen mukaan.
 
-## e) Komennus (HUOM. Virheellisesti jäänyt pois alkuperäisestä 29.4.2024 palautuksesta, joten lisätty jälkikäteen 30.4.2024)
+## e) Komennus (HUOM. Virheellisesti jäänyt pois alkuperäisestä 29.4.2024 palautuksesta, joten lisätty jälkikäteen kuvat 30.4.2024 & tekstit 13.5.2024)
 
 Tässä osiossa tehtävänäni on tehdä Salt-tila, joka asentaa järjestelmään uuden komennon. Päätin luoda tilan, jonka suorittamalla minionit päivittävät heidän pakettivarastonsa ja tarvittaessa asentavat tuoreet päivitykset. Lisäsin myös läpinäkyvyyttä lisäävän ilmoituksen, joka ilmoittaa jos päivitettävää on tai ei ole.
 
